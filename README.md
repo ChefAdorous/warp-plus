@@ -1,7 +1,7 @@
 # 🌐 WARP+ Unlimited Referral Rewards Generator
 
 <p align="center">
-  <img src="https://1.1.1.1/media/warp-desktop-logo.svg" alt="WARP+ Logo" width="200">
+  <img src="https://one.one.one.one/media/warp-desktop.png" alt="WARP+ Logo" width="200">
 </p>
 
 <p align="center">
