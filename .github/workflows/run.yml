@@ -1,0 +1,85 @@
+name: Run WARP+ Script
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+
+jobs:
+  run-warp-plus:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install aiohttp colorama tqdm pyfiglet psutil requests
+
+    - name: Run WARP+ script
+      env:
+        REFERRER_ID: l321C9Wk-a52qZ47P-0WI85k7A
+      run: |
+        python - <<EOF
+        import asyncio
+        import aiohttp
+        import json
+        import datetime
+        import random
+        import string
+        import os
+
+        referrer = os.environ['REFERRER_ID']
+        url = f'https://api.cloudflareclient.com/v0a{random.randint(100, 999)}/reg'
+
+        async def run(session):
+            try:
+                install_id = ''.join(random.choices(string.ascii_letters + string.digits, k=22))
+                body = {
+                    "key": f"{''.join(random.choices(string.ascii_letters + string.digits, k=43))}=",
+                    "install_id": install_id,
+                    "fcm_token": f"{install_id}:APA91b{''.join(random.choices(string.ascii_letters + string.digits, k=134))}",
+                    "referrer": referrer,
+                    "warp_enabled": False,
+                    "tos": f"{datetime.datetime.now().isoformat()[:-3]}+02:00",
+                    "type": "Android",
+                    "locale": "es_ES",
+                }
+                headers = {
+                    'Content-Type': 'application/json; charset=UTF-8',
+                    'Host': 'api.cloudflareclient.com',
+                    'Connection': 'Keep-Alive',
+                    'Accept-Encoding': 'gzip',
+                    'User-Agent': 'okhttp/3.12.1'
+                }
+                async with session.post(url, json=body, headers=headers) as response:
+                    if response.status == 200:
+                        print("Successfully added 1GB to WARP+")
+                        return True
+                    else:
+                        print(f"Failed to add data. Status code: {response.status}")
+                        return False
+            except Exception as error:
+                print(f"Error: {error}")
+                return False
+
+        async def main():
+            async with aiohttp.ClientSession() as session:
+                result = await run(session)
+                print(f"Final result: {'Success' if result else 'Failure'}")
+
+        asyncio.run(main())
+        EOF
+
+    - name: Update README with result
+      run: |
+        echo "## Last Run Result" >> $GITHUB_STEP_SUMMARY
+        echo "Date: $(date)" >> $GITHUB_STEP_SUMMARY
+        echo "Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
