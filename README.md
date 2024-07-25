@@ -1,11 +1,15 @@
 # 🌐 WARP+ Unlimited Referral Rewards Generator
 
-[![WARP+ Logo](https://1.1.1.1/media/warp-desktop-logo.svg)
+<p align="center">
+  <img src="https://1.1.1.1/media/warp-desktop-logo.svg" alt="WARP+ Logo" width="200">
+</p>
 
-[![GitHub stars](https://img.shields.io/github/stars/ChefAdorous/warp-plus.svg)](https://github.com/ChefAdorous/warp-plus/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/ChefAdorous/warp-plus.svg)](https://github.com/ChefAdorous/warp-plus/network)
-[![GitHub issues](https://img.shields.io/github/issues/ChefAdorous/warp-plus.svg)](https://github.com/ChefAdorous/warp-plus/issues)
-[![GitHub license](https://img.shields.io/github/license/ChefAdorous/warp-plus.svg)](https://github.com/ChefAdorous/warp-plus/blob/main/LICENSE)
+<p align="center">
+  <a href="https://github.com/ChefAdorous/warp-plus/stargazers"><img src="https://img.shields.io/github/stars/ChefAdorous/warp-plus.svg" alt="GitHub stars"></a>
+  <a href="https://github.com/ChefAdorous/warp-plus/network"><img src="https://img.shields.io/github/forks/ChefAdorous/warp-plus.svg" alt="GitHub forks"></a>
+  <a href="https://github.com/ChefAdorous/warp-plus/issues"><img src="https://img.shields.io/github/issues/ChefAdorous/warp-plus.svg" alt="GitHub issues"></a>
+  <a href="https://github.com/ChefAdorous/warp-plus/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ChefAdorous/warp-plus.svg" alt="GitHub license"></a>
+</p>
 
 Generate unlimited WARP+ referral data for Cloudflare's 1.1.1.1 VPN service with this advanced, feature-rich script.
 
@@ -15,7 +19,7 @@ Generate unlimited WARP+ referral data for Cloudflare's 1.1.1.1 VPN service with
 - 🌈 Sleek, colorful, and interactive console interface
 - 📊 Real-time progress tracking with ETA and speed metrics
 - 💾 Persistent data storage with JSON backup and restore
-- 🛠 Comprehensive system resource monitoring (CPU, RAM, Disk)
+- 🛠️ Comprehensive system resource monitoring (CPU, RAM, Disk)
 - 🌐 Built-in internet speed testing functionality
 - 🔧 Highly configurable settings with command-line options
 - 🔒 Secure handling of referral IDs and user data
@@ -24,7 +28,7 @@ Generate unlimited WARP+ referral data for Cloudflare's 1.1.1.1 VPN service with
 - 🌙 Dark mode support for late-night usage
 - 🐳 Docker support for easy deployment and scaling
 
-## 🛠 Prerequisites
+## 🛠️ Prerequisites
 
 - Python 3.7+
 - pip (Python package manager)
