@@ -1,0 +1,6 @@
+aiohttp==3.8.5
+colorama==0.4.6
+tqdm==4.65.0
+pyfiglet==0.8.post1
+psutil==5.9.5
+requests==2.31.0
